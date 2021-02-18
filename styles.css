@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(green, black);
+}
+
+.page-title {
+    color: gold;
+    text-align: center;
+}
+
+.game-info {
+    color: gold;
+    text-align: center;
+    font-size: 4em;
+}
+
+.game-info-container {
+ grid-column: 1 / -1;
+ display: flex;
+ justify-content: space-between;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    background-color:  gold;
+    height: 175px;
+    width: 125px;
+}
