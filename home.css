@@ -10,7 +10,21 @@ body {
 
 nav {
     background: radial-gradient(green, black);
-    color: gold;
+    color: rgb(255, 251, 0);
     display: flex
     justify-content: space-between;
+}
+
+nav .mainMenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav .mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: purple;
 }
