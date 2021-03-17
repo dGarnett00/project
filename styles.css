@@ -3,7 +3,8 @@
 }
 
 html {
-    min-height: 100vh;
+    min-height: 1vh;
+    
 }
 
 body {
@@ -30,22 +31,24 @@ body {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     margin: 50px;
     justify-content: center;
+
 }
 
 .card {
     position: relative;
     background-color:  gold;
-    height: 175px;
+    height: 150px;
     width: 125px;
+    
 }
 
-.card-front {
-    background-color: aqua;
+h1 {
+    font-size: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
-
-
