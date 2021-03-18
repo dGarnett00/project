@@ -60,9 +60,8 @@ h1 {
 
 .nav {
     display: flex;
+    font-size: 25px;
+    text-align: center;
     
 }
 
-.openMenu {
-    color: green;
-}
