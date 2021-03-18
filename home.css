@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    @media(max-width: 600px)
 }
 
 body {
@@ -9,10 +11,9 @@ body {
 }
 
 nav {
-    background: radial-gradient(green, black);
-    color: rgb(255, 251, 0);
-    display: flex
-    justify-content space-between;
+    background: red;
+    display: flex;
+    justify-content: center;
 }
 
 nav .mainMenu {
@@ -54,8 +55,8 @@ nav .logo {
 
 @media(max-width: 600px){
  nav .mainMenu {
-     height: 100vh;
-     position: fixed;
+     height: 10vh;
+     position: absolute;
      top: 0;
      right: 0;
      left: 0;
