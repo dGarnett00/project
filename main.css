@@ -16,11 +16,13 @@ body {
 .menu {
     width: 35px;
     height: 30px;
-    background-color: red;
     position: fixed;
     top: 50px;
     right: 50px;
     cursor: cell;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .line1 , .line2 , .line3 {
@@ -28,4 +30,62 @@ body {
     height: 3px;
     background-color: black;
 
+}
+
+.navbar {
+    width: 300px;
+    height: 100%;
+    background-color: blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20% 0 0 60%;
+}
+
+.nav-list {
+    text-align: right;
+
+}
+
+.nav-item {
+    list-style: armenian;
+    margin: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 22px;
+    color: gold;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0;
+
+}
+
+.nav-link::before,
+.nav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+   
+}
+
+.line1 {
+    transform: rotateZ(-45deg) translate(-8px, 6px);
+}
+
+.line3 {
+    transform: rotateZ(45deg) translate(-8px, -6px);
+}
+
+.line2 {
+    opacity: 0;
 }
