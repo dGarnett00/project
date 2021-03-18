@@ -39,11 +39,16 @@ body {
     background-color: blue;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -300px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20% 0 0 60%;
+    transition: right .8s cubic-bezier(1, 0, 0, 1);
+}
+
+.change {
+    right: 0;
 }
 
 .nav-list {
@@ -80,11 +85,11 @@ body {
 }
 
 .change .line1 {
-    transform: rotateZ(-45deg) translate(-8px, 6px);
+    transform: rotateZ(-405deg) translate(-8px, 6px);
 }
 
 .change .line3 {
-    transform: rotateZ(45deg) translate(-8px, -6px);
+    transform: rotateZ(405deg) translate(-8px, -6px);
 }
 
 .change .line2 {
