@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -28,7 +29,7 @@ body {
 .line1 , .line2 , .line3 {
     width: 100%;
     height: 3px;
-    background-color: black;
+    background-color: blue;
     transition: all 0.8s;
 
 }
@@ -36,7 +37,7 @@ body {
 .navbar {
     width: 300px;
     height: 100%;
-    background-color: blue;
+    background-color: black;
     position: fixed;
     top: 0;
     right: -300px;
