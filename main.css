@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+}
+
+.menu {
+    width: 35px;
+    height: 30px;
+    background-color: red;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    cursor: cell;
+}
+
+.line1 , .line2 , .line3 {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+
+}
