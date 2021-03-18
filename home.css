@@ -57,6 +57,10 @@ nav .logo {
   nav  .mainMenu{
         display: none;
     }
+
+    .mainMenu.toggleCls {
+        display: block;
+    }
 }
 
 @media(min-width: 769px) {
