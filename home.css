@@ -12,12 +12,12 @@ nav {
     background: radial-gradient(green, black);
     color: rgb(255, 251, 0);
     display: flex
-    justify-content: space-between;
+    justify-content space-between;
 }
 
 nav .mainMenu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -27,4 +27,72 @@ nav .mainMenu li a {
     text-decoration: none;
     text-transform: uppercase;
     color: purple;
+    font-size: 1.5rem;
 }
+
+nav .mainMenu li a:hover {
+    background: red;
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav .mainMenu .closemenu , .closemenu , .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+ 
+nav .logo {
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width: 600px){
+ nav .mainMenu {
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     right: 0;
+     left: 0;
+     z-index: 10;
+     flex-direction: column;   
+     justify-content: center;
+     align-items: center;
+     background: red;
+     transition: top 1s ease;
+     display: none;
+    }
+}
+
+.icons i {
+    display: inline-block;
+    padding: 12px;
+}
+
+
+
+nav .mainMenu .closemenu {
+     display: block;
+     position: absolute;
+     top: 20px;
+     right: 20px;
+
+
+}
+nav .openMenu {
+    display: block;
+
+}
+
+nav .mainMenu li a:hover {
+     background: none; 
+     color: pink;
+     font-size: 1.6rem;
+
+}
+
