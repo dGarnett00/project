@@ -98,7 +98,6 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    
 }
 
 @media(max-width: 768px){
@@ -107,8 +106,14 @@ body {
     }
 }
 
-.p {
+
+.overlay {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
-    font-size: 100px;
 }
+
