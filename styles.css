@@ -72,11 +72,17 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;  
+}
+.card-front {
+    transform: rotate(180deg)
 }
 
 .nba {
     position: absolute;
     width: 125px;
     height: 150px;
-    
+    align-self: flex-start;
+    transition: transform 100ms ease-in-out;
 }
