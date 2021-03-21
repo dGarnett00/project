@@ -12,6 +12,9 @@ body {
 .body2 {
     background-color: green;
 }
+html {
+    min-height: 100vh;
+}
 
 .menu {
     width: 35px;
@@ -104,7 +107,7 @@ body {
 }
 
 @media(max-width: 768px){
-    .v-header {
+    .game-container {
         display: contents;
     }
 }
@@ -130,3 +133,4 @@ body {
     color: gold;
 
 }
+
