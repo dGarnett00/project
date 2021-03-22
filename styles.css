@@ -86,3 +86,26 @@ h1 {
     align-self: flex-start;
     transition: transform 100ms ease-in-out;
 }
+
+/* ipads */
+@media screen and (max-width: 768px) {
+    .game-container {
+        width: 100%;
+    }
+    body {
+        width: 100%;
+    }
+}
+/* Phones */
+@media screen and (max-width: 320px) {
+    .game-container {
+        width: 100%;
+    }
+    body {
+        width: 100%;
+    }
+    .card {
+        width: 11vh;
+        height: 25vh;
+    }
+}
