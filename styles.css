@@ -76,7 +76,7 @@ body {
 .card:hover{
     transform: rotate(180deg);
 }
-.game-container {
+.game {
     display: grid;
     grid-template-columns: repeat(4,auto);
     grid-gap: 10px;
