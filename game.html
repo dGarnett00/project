@@ -1,182 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="styles.css" rel="stylesheet">
-  <title>Mix-Or-Match</title>
-</head>
-<body>
 
-            <nav class="nav">
-        <div class="logo"><h2>Game</h2></div>
-        <div class="openMenu"><i class="fa fa-bars"></i></div>
-        <ul class="mainMenu">
-            <li><a href="/main.html">home</a></li>
-            <li><a href="/htp.html">how to play</a></li>
-            <li><a href="/game.html">Game</a></li>
-            <div class="closeMenu"><i class="fa fa-times"></i></div>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(green, black);
+}
+
+.title {
+  color: #FF6D00;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info {
+  color: #FFBB89;
+  font-size: 4em;
+}
+
+.game {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+}
+
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg); 
+}
+
+.card.visible .card-front {
+  transform: rotateY(0); 
+}
+
+.card:hover .card-front .face {
+  animation: dance 1s linear infinite 500ms;
+}
+
+.card-back {
+  background-color: gold;
+  border-color: black;
+  transform: rotateY(0); 
+}
 
 
-        </ul>
-    </nav>
+.menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  cursor: cell;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 
-  <h1 class="title">Davonta' Pick and Match</h1>
-  <div class="overlay-text visible">
-    Click to Start
-  </div>
-  <div id="game-over-text" class="overlay-text">
-    GAME OVER
-    <span class="overlay-text-small">Click to Restart</span>
-  </div>
-  <div id="victory-text" class="overlay-text">
-    VICTORY
-    <span class="overlay-text-small">Click to Restart</span>
-  </div>
+.navbar {
+  width: 300px;
+  height: 100%;
+  position: relative;
+  top: 0;
+  right: -300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20% 0 0 60%;
+  transition: right .8s cubic-bezier(1, 0, 0, 1);
+  opacity: 80%;
+}
 
-  <div class="game">
+.change {
+  right: 0;
+}
 
-    <div class="game-info-container">
-      <div class="game-info">
-        Time <span id="time-remaining">100</span>
-      </div>
-      <div class="game-info">
-        Flips <span id="flips">0</span>
-      </div>
-    </div>
-    
+.nav-list {
+  text-align: right;
 
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-             <img class="nba" src="/game/images/bull.jpeg">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-        
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-       
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-        
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-     
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-      
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-        
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-     
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-   
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-       
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>    
-      <div class="card-front">
-       
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
+}
+
+.nav-item {
+  list-style: armenian;
+  margin: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: blue;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: gold;
+  position: absolute;
+  left: 0;
  
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-        
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-      
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-      
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back">
-            <img class="nba" src="/game/images/kobe.png">
-      </div>
-      <div class="card-front">
-       
-      </div>
-    </div>
-  </div>
+}
 
-</body>
-</html>
+.change .line1 {
+  transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change .line3 {
+  transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+.change .line2 {
+  opacity: 0;
+}
+
+.nba {
+height: 175px;
+width: 150px;
+}
+
+.card-back:hover .nba {
+  transform: translateY(0);
+}
+
+.face {
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);   
+  height: 175px;
+  width: 150px;
+}
+
+
+
+.card-front {
+  background-color: blue;
+  border-color: #333;
+  transform: rotateY(180deg); 
+}
+
+
+
+
+@media (max-width: 600px) {
+  .game{
+    grid-template-columns: repeat(2, auto)
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
