@@ -5,7 +5,7 @@
 
 html {
   min-height: 100vh;
-
+  cursor: crosshair;
 }
 
 body {
@@ -13,8 +13,14 @@ body {
   background: radial-gradient(green, black);
 }
 
+.fullscreen-video-wrap {
+  display: flex;
+  justify-content: center;
+
+}
+
 .title {
-  color: #FF6D00;
+  color: gold;
   font-weight: normal;
   text-align: center;
   font-size: 6em;
@@ -27,7 +33,7 @@ body {
 }
 
 .game-info {
-  color: #FFBB89;
+  color: gold;
   font-size: 4em;
 }
 
@@ -160,8 +166,12 @@ height: 175px;
 width: 150px;
 }
 
-.card-back:hover .nba {
+.card-front:hover .nba {
   transform: translateY(0);
+}
+
+.card:hover {
+  cursor: grabbing;
 }
 
 .face {

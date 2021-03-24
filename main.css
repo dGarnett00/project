@@ -9,9 +9,6 @@ body {
     margin: 0;
 }
  
-.body2 {
-    background-color: green;
-}
 html {
     min-height: 100vh;
 }
@@ -106,9 +103,9 @@ html {
     align-items: center;
 }
 
-@media(max-width: 768px){
-    .game-container {
-        display: contents;
+@media (max-width: 768px){
+    body .body2 {
+        display: none;
     }
 }
 
