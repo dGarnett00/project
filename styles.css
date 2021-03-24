@@ -24,7 +24,7 @@ body {
 }
 
 .video video{
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -209,7 +209,7 @@ width: 150px;
 
 
 @media (max-width: 600px) {
-  .game .container{
+  .game .container , .video {
     grid-template-columns: repeat(2, auto)
   }
 
