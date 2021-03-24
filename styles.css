@@ -13,11 +13,27 @@ body {
   background: radial-gradient(green, black);
 }
 
-.fullscreen-video-wrap {
+.video {
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 50%;
 }
+
+.video video{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
 
 .title {
   color: gold;
@@ -193,7 +209,7 @@ width: 150px;
 
 
 @media (max-width: 600px) {
-  .game{
+  .game .container{
     grid-template-columns: repeat(2, auto)
   }
 
