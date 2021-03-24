@@ -55,7 +55,6 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    opacity: 50%;
   }
 
 .video video{
@@ -74,7 +73,7 @@ html {
 
 .nav-list {
     text-align: right;
-
+    position: fixed;
 }
 
 .nav-item {
@@ -123,7 +122,7 @@ html {
 }
 
 @media (max-width: 768px){
-    body .body2 {
+    body .body2 , .video {
         display: none;
     }
 }

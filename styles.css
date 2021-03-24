@@ -135,12 +135,14 @@ body {
 
 .nav-list {
   text-align: right;
-
+  position: fixed;
+  display: flex;
+  
 }
 
 .nav-item {
   list-style: armenian;
-  margin: 25px;
+  margin: 30px;
 }
 
 .nav-link {
@@ -208,7 +210,7 @@ width: 150px;
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-width: 270px) {
   .game .container , .video {
     grid-template-columns: repeat(2, auto)
   }
@@ -217,4 +219,19 @@ width: 150px;
     flex-direction: column;
     align-items: center;
   }
+  .nav-list {
+    display: block;
+}
+}
+
+
+@media(max-width: 768px) {
+  .game .container , .video {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .nav-list {
+    display: block;
+  }
+
 }
