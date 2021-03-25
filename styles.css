@@ -134,21 +134,20 @@ body {
 }
 
 .nav-list {
-  text-align: right;
-  position: fixed;
   display: flex;
-  
+  bottom: -40px;
+  color: gold;
 }
 
 .nav-item {
-  list-style: armenian;
+  list-style: disc;
   margin: 30px;
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: 22px;
-  color: blue;
+  font-size: 18px;
+  color: gold;
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -210,8 +209,8 @@ width: 150px;
 
 
 
-@media (max-width: 600px) and (min-width: 270px) {
-  .game .container , .video {
+@media (max-width: 600px){
+  .game  {
     grid-template-columns: repeat(2, auto)
   }
 
@@ -219,19 +218,8 @@ width: 150px;
     flex-direction: column;
     align-items: center;
   }
-  .nav-list {
-    display: block;
-}
-}
-
-
-@media(max-width: 768px) {
-  .game .container , .video {
-    grid-template-columns: repeat(2, auto);
-  }
 
   .nav-list {
     display: block;
   }
-
 }
