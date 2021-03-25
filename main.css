@@ -123,7 +123,7 @@ html {
 
 @media (max-width: 768px){
    .video {
-        display:contents;
+        display: contents;
     }
 }
 
