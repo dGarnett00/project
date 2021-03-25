@@ -122,8 +122,8 @@ html {
 }
 
 @media (max-width: 768px){
-    body .body2 , .video {
-        display: none;
+   .video {
+        display:contents;
     }
 }
 
