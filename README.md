@@ -1,1 +1,2 @@
-# ttgbug.github.io
+# My project is just a website that features 3 pages.
+# one of the pages i created is an game page that includes
