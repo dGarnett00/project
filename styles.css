@@ -151,11 +151,10 @@ body {
   position: fixed;
   top: 50px;
   right: 50px;
-  cursor: cell;
+  cursor: grabbing;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 100;
 }
 
 
@@ -182,6 +181,7 @@ body {
 .nav-list {
   text-align: right;
   position: fixed;
+  
   
 }
 
@@ -263,7 +263,5 @@ width: 150px;
     align-items: center;
   }
 
-  .nav-list {
-    display: block;
-  }
+
 }
