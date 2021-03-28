@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0011)about:blank -->
+<html><script>
+        (function() {
+            // If GPC on, set DOM property to true if not already true
+            if (true) {
+                if (navigator.globalPrivacyControl) return
+                Object.defineProperty(navigator, 'globalPrivacyControl', {
+                    value: true,
+                    enumerable: true
+                })
+            } else {
+                // If GPC off, set DOM property prototype to false so it may be overwritten
+                // with a true value by user agent or other extensions
+                if (typeof navigator.globalPrivacyControl !== "undefined") return
+                Object.defineProperty(Object.getPrototypeOf(navigator), 'globalPrivacyControl', {
+                    value: false,
+                    enumerable: true
+                })
+            }
+            // Remove script tag after execution
+            document.currentScript.parentElement.removeChild(document.currentScript)
+        })()
+        </script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body></body></html>

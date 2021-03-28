@@ -9,36 +9,53 @@
   <title>Davonta's Pick and Match</title>
 </head>
 <body>
+  <div class="overlay-text visible">
+    Click anywhere to Start
+  </div>
+  <div id="game-over" class="overlay-text">
+    Game is Over
+      
+      <span class="small">
+        Click anywhere to Restart
+      </span>
+    </div>
+    <div id="winner" class="overlay-text">
+      WINNER 
+      <span class="small">
+        Click anywhere to Restart
+      </span>
+    </div>
+  </div>
 
-      <div class="video">
-            <video src="/videos/mari0.mp4" autoplay="true"
-            loop="true" muted></video>
-      </div>
+  <div class="video">
+    <video src="/videos/mari0.mp4" autoplay="true"
+      loop="true" muted></video>
+    </div>
   <div class="container">
-            <nav class="navbar">
-                <div class="menu">
-                  <div class="line1"></div>
-                  <div class="line2"></div>
-                  <div class="line3"></div>
-                </div>
-                  <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="/main.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/htp.html" class="nav-link">How to play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/game.html" class="nav-link">Game</a>
-                    </li>
-                  </ul>
-            </nav>
+  <nav class="navbar">
+      <div class="menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="/main.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/htp.html" class="nav-link">How to play</a>
+      </li>
+      <li class="nav-item">
+        <a href="/game.html" class="nav-link">Game</a>
+        </li>
+    </ul>
+   </nav>
   <h1 class="title">Davonta's Pick and Match</h1>
 
   <div class="game">
     <div class="game-info-container">
       <div class="game-info">
-        Time:<span id="time-remaining">100</span>
+        Time:<span id="time-remaining">50</span>
       </div>
       <div class="game-info">
         Flips: <span id="flips">0</span>
@@ -50,7 +67,7 @@
         
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/bull.jpeg">
+        <img class="face" src="/game/images/bull.jpeg">
 
       </div>
     </div>
@@ -59,7 +76,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/lak.jpeg">
+        <img class="face" src="/game/images/lak.jpeg">
       </div>
     </div>
     <div class="card">
@@ -67,7 +84,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-       <img class="nba" src="/game/images/mav.jpeg">
+       <img class="face" src="/game/images/mav.jpeg">
       </div>
     </div>
     <div class="card">
@@ -75,7 +92,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/nba.png">
+        <img class="face" src="/game/images/nba.png">
       </div>
     </div>
     <div class="card">
@@ -83,7 +100,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/net.jpeg">
+        <img class="face" src="/game/images/net.jpeg">
       </div>
     </div>
     <div class="card">
@@ -91,7 +108,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/okc.jpeg">
+        <img class="face" src="/game/images/okc.jpeg">
       </div>
     </div>
     <div class="card">
@@ -99,7 +116,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/rap.jpeg">
+        <img class="face" src="/game/images/rap.jpeg">
       </div>
     </div>
     <div class="card">
@@ -107,7 +124,7 @@
        <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/wae.jpeg">
+        <img class="face" src="/game/images/wae.jpeg">
       </div>
     </div>
     <div class="card">
@@ -115,7 +132,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/lak.jpeg">
+        <img class="face" src="/game/images/lak.jpeg">
       </div>
     </div>
     <div class="card">
@@ -123,7 +140,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-       <img class="nba" src="/game/images/rap.jpeg">
+       <img class="face" src="/game/images/rap.jpeg">
       </div>
     </div>
     <div class="card">
@@ -131,7 +148,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-       <img class="nba" src="/game/images/wae.jpeg">
+       <img class="face" src="/game/images/wae.jpeg">
       </div>
     </div>
     <div class="card">
@@ -139,7 +156,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/okc.jpeg">
+        <img class="facae" src="/game/images/okc.jpeg">
       </div>
     </div>
     <div class="card">
@@ -147,7 +164,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/net.jpeg">
+        <img class="face" src="/game/images/net.jpeg">
       </div>
     </div>
     <div class="card">
@@ -155,7 +172,7 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/nba.png">
+        <img class="face" src="/game/images/nba.png">
       </div>
     </div>
     <div class="card">
@@ -163,7 +180,7 @@
        <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-        <img class="nba" src="/game/images/mav.jpeg">
+        <img class="face" src="/game/images/mav.jpeg">
       </div>
     </div>
     <div class="card">
@@ -171,10 +188,12 @@
         <img class="nba" src="/game/images/kobe.png">
       </div>
       <div class="card-front card-face">
-       <img class="nba" src="/game/images/bull.jpeg">
+       <img class="face" src="/game/images/bull.jpeg">
       </div>
     </div>
   </div>
 
 </body>
 </html>
+
+

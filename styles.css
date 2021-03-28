@@ -91,7 +91,7 @@ body {
   transform: rotateY(0); 
 }
 
-.card:hover .card-front .face {
+.card.matched .face {
   animation: dance 1s linear infinite 500ms;
 }
 
@@ -100,6 +100,41 @@ body {
   border-color: black;
   transform: rotateY(0); 
 }
+
+.face {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+}
+
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: gold;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  transition: background-color 500ms, font-size 500ms;
+  font-size: 100px;
+}
+
+.small {
+  font-size: .3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
 
 
 .menu {
@@ -205,6 +240,8 @@ width: 150px;
   border-color: #333;
   transform: rotateY(180deg); 
 }
+
+
 
 
 

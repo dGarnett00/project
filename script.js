@@ -1,4 +1,37 @@
-class Game {
+class AudioController {
+    constructor() {
+        this.bgMusic = new Audio('/videos/Super Mario Bros. Theme Song.mp3');
+        this.flipSound = new Audio('/videos/coin.mp3');
+        this.matchSound = new Audio('/videos/power.mp3');
+        this.victorySound = new Audio('/videos/win.mp3');
+        this.gameOverSound = new Audio('/videos/lose.mp3');
+        this.bgMusic.volume = 0.2;
+        this.bgMusic.loop = true;
+    }
+    startMusic() {
+        this.bgMusic.play();
+    }
+    stopMusic() {
+        this.bgMusic.pause();
+        this.bgMusic.currentTime = 0;
+    }
+    flip() {
+        this.flipSound.play();
+    }
+    match() {
+        this.matchSound.play();
+    }
+    victory() {
+        this.stopMusic();
+        this.victorySound.play();
+    }
+    gameOver() {
+        this.stopMusic();
+        this.gameOverSound.play();
+    }
+}
+
+class Match {
     constructor(totalTime, cards) {
         this.cardsArray = cards;
         this.totalTime = totalTime;
@@ -35,12 +68,12 @@ class Game {
     gameOver() {
         clearInterval(this.countdown);
         this.audioController.gameOver();
-        document.getElementById('game-over-text').classList.add('visible');
+        document.getElementById('game-over').classList.add('visible');
     }
     victory() {
         clearInterval(this.countdown);
-        this.audioController.victory();
-        document.getElementById('victory-text').classList.add('visible');
+        this.audioController.winner();
+        document.getElementById('winner').classList.add('visible');
     }
     hideCards() {
         this.cardsArray.forEach(card => {
@@ -77,7 +110,7 @@ class Game {
         card2.classList.add('matched');
         this.audioController.match();
         if(this.matchedCards.length === this.cardsArray.length)
-            this.victory();
+            this.winner();
     }
     cardMismatch(card1, card2) {
         this.busy = true;
@@ -87,7 +120,7 @@ class Game {
             this.busy = false;
         }, 1000);
     }
-    shuffleCards(cardsArray) { // Fisher-Yates Shuffle Algorithm.
+    shuffleCards(cardsArray) { 
         for (let i = cardsArray.length - 1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
             cardsArray[randIndex].style.order = i;
@@ -95,7 +128,7 @@ class Game {
         }
     }
     getCardType(card) {
-        return card.getElementsByClassName('card-value')[0].src;
+        return card.getElementsByClassName('face')[0].src;
     }
     canFlipCard(card) {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
@@ -111,7 +144,7 @@ if (document.readyState == 'loading') {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new Game(100, cards);
+    let game = new Match(50, cards);
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
