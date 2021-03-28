@@ -242,10 +242,6 @@ width: 150px;
 }
 
 
-
-
-
-
 @media (max-width: 600px){
   .game  {
     grid-template-columns: repeat(2, auto)
