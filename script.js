@@ -1,10 +1,10 @@
 class AudioController {
     constructor() {
-        this.bgMusic = new Audio('/videos/Super Mario Bros. Theme Song.mp3');
-        this.flipSound = new Audio('/videos/coin.mp3');
-        this.matchSound = new Audio('/videos/power.mp3');
-        this.victorySound = new Audio('/videos/win.mp3');
-        this.gameOverSound = new Audio('/videos/lose.mp3');
+        this.bgMusic = new Audio('./videos/Super Mario Bros. Theme Song.mp3');
+        this.flipSound = new Audio('./videos/coin.mp3');
+        this.matchSound = new Audio('./videos/power.mp3');
+        this.victorySound = new Audio('./videos/win.mp3');
+        this.gameOverSound = new Audio('./videos/lose.mp3');
         this.bgMusic.volume = 0.2;
         this.bgMusic.loop = true;
     }
