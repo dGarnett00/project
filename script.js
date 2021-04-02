@@ -71,9 +71,9 @@ class Match {
         this.audioController.gameOver();
         document.getElementById('game-over').classList.add('visible');
     }
-    victory() {
+    winner() {
         clearInterval(this.countdown);
-        this.audioController.winner();
+     
         document.getElementById('winner').classList.add('visible');
     }
     hideCards() {
