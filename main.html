@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="main.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <header class="v-header container">
-            <div class="overlay">
-                <h1>WELCOME!</h1>
-            </div>
-            <div class="video">
-            <video src="./videos/space.mp4" autoplay="true"
-            loop="true"></video>
-            </div> 
-        </header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-                </div>
-
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="./main.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./htp.html" class="nav-link">How to play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./game.html" class="nav-link">Game</a>
-                    </li>
-                    
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome | Space Game</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <header class="v-header container">
+        <div class="video">
+            <video src="./videos/space.mp4" autoplay loop muted playsinline></video>
         </div>
-            
-             <script src="main.js"></script>
-    </body>
+        <div class="overlay">
+            <h1>WELCOME!</h1>
+        </div>
+    </header>
+    <nav class="navbar container">
+        <div class="menu" aria-label="Toggle navigation">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="./main.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="./htp.html" class="nav-link">How to play</a>
+            </li>
+            <li class="nav-item">
+                <a href="./game.html" class="nav-link">Game</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="main.js"></script>
+</body>
 </html>
