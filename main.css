@@ -1,150 +1,195 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Reset and base styles */
+* { /* Selects all elements */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-}
- 
-html {
-    min-height: 100vh;
+body { /* Styles for the body element */
+    font-family: Arial, Helvetica, sans-serif; /* Sets the font */
+    margin: 0; /* Removes default margin */
+    background: #000; /* Sets background color to black */
 }
 
-.menu {
-    width: 35px;
-    height: 30px;
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    cursor: cell;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+html { /* Styles for the html element */
+    min-height: 100vh; /* Makes sure the page is at least the height of the viewport */
 }
 
-.line1 , .line2 , .line3 {
-    width: 100%;
-    height: 3px;
-    background-color: blue;
-    transition: all 0.8s;
-    opacity: 100%;
-
+/* Hamburger menu icon styles */
+.menu { /* Styles for the menu (hamburger icon) */
+    width: 35px; /* Sets width */
+    height: 30px; /* Sets height */
+    position: fixed; /* Fixes position on screen */
+    top: 50px; /* 50px from the top */
+    right: 50px; /* 50px from the right */
+    cursor: pointer; /* Shows pointer cursor on hover */
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: space-around; /* Evenly spaces the lines */
+    z-index: 1001; /* Places above most elements */
 }
 
-.navbar {
-    width: 300px;
-    height: 100%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20% 0 0 60%;
-    transition: right .8s cubic-bezier(1, 0, 0, 1);
-    opacity: 80%;
-}
-.video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-.video video{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-.change {
-    right: 0;
+.line1, .line2, .line3 { /* Styles for each line in the hamburger */
+    width: 100%; /* Full width of parent */
+    height: 3px; /* 3px tall */
+    background-color: blue; /* Blue color */
+    transition: all 0.8s; /* Smooth transition for animations */
+    opacity: 1; /* Fully visible */
 }
 
-.nav-list {
-    text-align: right;
-    position: fixed;
+/* Navigation bar styles */
+.navbar { /* Styles for the navigation bar */
+    width: 300px; /* 300px wide */
+    height: 100%; /* Full height of screen */
+    background-color: rgba(0,0,0,0.8); /* Black with 80% opacity */
+    position: fixed; /* Fixed on screen */
+    top: 0; /* At the top */
+    right: -300px; /* Hidden to the right by default */
+    display: flex; /* Uses flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    border-radius: 20% 0 0 60%; /* Rounded left side */
+    transition: right .8s cubic-bezier(1, 0, 0, 1); /* Smooth slide-in effect */
+    z-index: 1000; /* Sits above most elements */
 }
 
-.nav-item {
-    list-style: armenian;
-    margin: 25px;
+/* When menu is open, navbar slides in */
+.change { /* Class added when menu is toggled */
+    right: 0; /* Moves navbar into view */
 }
 
-.nav-link {
-    text-decoration: none;
-    font-size: 22px;
-    color: blue;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 3px 0;
+.nav-list { /* Styles for the navigation list */
+    text-align: right; /* Aligns text to the right */
+    position: fixed; /* Fixed position */
+    right: 40px; /* 40px from right */
+    top: 120px; /* 120px from top */
+}
+
+.nav-item { /* Styles for each navigation item */
+    list-style: none; /* Removes bullet points */
+    margin: 25px 0; /* 25px vertical margin */
+}
+
+.nav-link { /* Styles for navigation links */
+    text-decoration: none; /* Removes underline */
+    font-size: 22px; /* Sets font size */
+    color: blue; /* Blue text */
+    font-weight: 300; /* Light font weight */
+    letter-spacing: 1px; /* Spacing between letters */
+    text-transform: uppercase; /* Uppercase letters */
+    position: relative; /* Allows absolute positioning of pseudo-elements */
+    padding: 3px 0; /* Padding above and below */
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.nav-link:hover,
+.nav-link:focus { /* When link is hovered or focused */
+    color: gold; /* Changes text color to gold */
+    outline: none; /* Removes outline */
 }
 
 .nav-link::before,
-.nav-link::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: gold;
-    position: absolute;
-    left: 0;
-   
+.nav-link::after { /* Decorative lines under links */
+    content: ""; /* Empty content */
+    width: 100%; /* Full width */
+    height: 2px; /* 2px tall */
+    background-color: gold; /* Gold color */
+    position: absolute; /* Positioned absolutely */
+    left: 0; /* Starts at left */
+    bottom: -4px; /* 4px below the link */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s; /* Smooth fade in/out */
 }
 
-.change .line1 {
-    transform: rotateZ(-405deg) translate(-8px, 6px);
+.nav-link:hover::before,
+.nav-link:focus::before { /* On hover/focus, show line */
+    opacity: 1; /* Makes line visible */
 }
 
-.change .line3 {
-    transform: rotateZ(405deg) translate(-8px, -6px);
+/* Hamburger animation when menu is open */
+.change .line1 { /* Top line rotates */
+    transform: rotateZ(-405deg) translate(-8px, 6px); /* Rotates and moves */
 }
 
-.change .line2 {
-    opacity: 0;
+.change .line3 { /* Bottom line rotates */
+    transform: rotateZ(405deg) translate(-8px, -6px); /* Rotates and moves */
 }
 
-.v-header{
-    height: 100vh;
-    display: flex;
-    align-items: center;
+.change .line2 { /* Middle line disappears */
+    opacity: 0; /* Hides line */
 }
 
-@media (max-width: 768px){
-   .video {
-        display: contents;
+/* Header and video background styles */
+.v-header { /* Styles for the header section */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Uses flexbox */
+    align-items: center; /* Centers content vertically */
+    position: relative; /* Allows absolute positioning inside */
+    z-index: 1; /* Sits above video */
+}
+
+.video { /* Container for video */
+    display: flex; /* Uses flexbox */
+    justify-content: center; /* Centers video horizontally */
+    align-items: center; /* Centers video vertically */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Hides overflow */
+}
+
+.video video { /* Styles for the video element */
+    position: fixed; /* Fixed position */
+    left: 0; /* Stretches to left */
+    top: 0; /* Stretches to top */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Video covers area without distortion */
+    z-index: -1; /* Sits behind everything */
+}
+
+/* Overlay for welcome text */
+.overlay { /* Styles for overlay text */
+    position: absolute; /* Positioned over video */
+    color: gold; /* Gold text */
+    top: 0; /* Stretches to top */
+    bottom: 0; /* Stretches to bottom */
+    left: 0; /* Stretches to left */
+    right: 0; /* Stretches to right */
+    display: flex; /* Uses flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    z-index: 2; /* Sits above video */
+    background: rgba(0,0,0,0.2); /* Slight black overlay for readability */
+}
+
+/* Rules section styles */
+.rules { /* Styles for rules section */
+    display: flex; /* Uses flexbox */
+    justify-content: center; /* Centers horizontally */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers vertically */
+    color: gold; /* Gold text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) { /* When screen is 768px or less */
+    .video { /* Video container */
+        display: contents; /* Removes flexbox, lets children display normally */
     }
-}
-
-
-.overlay {
-    position: absolute;
-    color: gold;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rules {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    color: gold;
-
+    .navbar { /* Navbar */
+        width: 100vw; /* Full viewport width */
+        border-radius: 0; /* Removes rounded corners */
+        right: -100vw; /* Hides navbar off screen */
+    }
+    .change { /* When menu is open */
+        right: 0; /* Slides navbar into view */
+    }
+    .nav-list { /* Navigation list */
+        right: 10vw; /* 10% from right */
+        top: 100px; /* 100px from top */
+    }
+    .menu { /* Hamburger menu */
+        top: 20px; /* 20px from top */
+        right: 20px; /* 20px from right */
+    }
 }

@@ -1,249 +1,237 @@
-
-* {
-  box-sizing: border-box;
+* { /* This selects every element on the page */
+  box-sizing: border-box; /* This makes padding and border count as part of the element's total width and height */
 }
 
-html {
-  min-height: 100vh;
-  cursor: crosshair;
+html { /* This styles the html element */
+  min-height: 100vh; /* This makes the page at least as tall as the browser window */
+  cursor: crosshair; /* This changes the mouse pointer to a crosshair everywhere */
 }
 
-body {
-  margin: 0;
-  background: radial-gradient(green, black);
+body { /* This styles the body of the page */
+  margin: 0; /* This removes the default margin around the page */
+  background: radial-gradient(green, black); /* This makes the background a circle gradient from green to black */
 }
 
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  opacity: 50%;
+.video { /* This styles the video container */
+  display: flex; /* This uses flexbox to lay out its children */
+  justify-content: center; /* This centers its children horizontally */
+  align-items: center; /* This centers its children vertically */
+  width: 100%; /* This makes it as wide as possible */
+  height: 100%; /* This makes it as tall as possible */
+  overflow: hidden; /* This hides anything that goes outside the box */
+  opacity: 50%; /* This makes the video see-through by 50% (should be 0.5 for best practice) */
 }
 
-.video video{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+.video video{ /* This styles the video itself */
+  position: fixed; /* This keeps the video in the same place even when scrolling */
+  left: 0; /* This puts the video at the left edge of the screen */
+  top: 0; /* This puts the video at the top edge of the screen */
+  width: 100%; /* This makes the video as wide as the screen */
+  height: 100%; /* This makes the video as tall as the screen */
+  object-fit: cover; /* This makes the video fill the area without stretching */
+  z-index: -1; /* This puts the video behind everything else */
 }
 
-
-
-.title {
-  color: gold;
-  font-weight: normal;
-  text-align: center;
-  font-size: 6em;
+.title { /* This styles the main game title */
+  color: gold; /* This makes the text gold */
+  font-weight: normal; /* This makes the text normal weight */
+  text-align: center; /* This centers the text */
+  font-size: 6em; /* This makes the text very large */
 }
 
-.game-info-container {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
+.game-info-container { /* This holds the game info like time and flips */
+  grid-column: 1 / -1; /* This makes it stretch across all columns in a grid */
+  display: flex; /* This uses flexbox for layout */
+  justify-content: space-between; /* This puts space between the info items */
 }
 
-.game-info {
-  color: gold;
-  font-size: 4em;
+.game-info { /* This styles each piece of game info */
+  color: gold; /* This makes the text gold */
+  font-size: 4em; /* This makes the text big */
 }
 
-.game {
-  margin: 50px auto;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  justify-content: center;
-  perspective: 500px;
+.game { /* This is the main game area */
+  margin: 50px auto; /* This puts 50px space above and below, and centers it horizontally */
+  display: grid; /* This uses CSS grid for layout */
+  grid-template-columns: repeat(4, auto); /* This makes 4 columns of equal width */
+  grid-gap: 10px; /* This puts 10px space between grid items */
+  justify-content: center; /* This centers the grid in the container */
+  perspective: 500px; /* This adds 3D perspective for card flipping */
 }
 
-.card {
-  position: relative;
-  height: 175px;
-  width: 125px;
+.card { /* This styles each card */
+  position: relative; /* This lets child elements be positioned absolutely inside */
+  height: 175px; /* This sets the card height */
+  width: 125px; /* This sets the card width */
 }
 
-.card-face {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  border-width: 1px;
-  border-style: solid;
-  overflow: hidden;
-  transition: transform 500ms ease-in-out;
-  backface-visibility: hidden;
+.card-face { /* This styles the front and back of each card */
+  position: absolute; /* This lets it stack on top of each other */
+  display: flex; /* This uses flexbox for layout */
+  justify-content: center; /* This centers the image horizontally */
+  align-items: center; /* This centers the image vertically */
+  width: 100%; /* This makes it as wide as the card */
+  height: 100%; /* This makes it as tall as the card */
+  border-radius: 12px; /* This rounds the corners */
+  border-width: 1px; /* This sets the border thickness */
+  border-style: solid; /* This makes the border solid */
+  overflow: hidden; /* This hides anything outside the card */
+  transition: transform 500ms ease-in-out; /* This animates the card flipping */
+  backface-visibility: hidden; /* This hides the back when flipped */
 }
 
-.card.visible .card-back {
-  transform: rotateY(-180deg); 
+.card.visible .card-back { /* When the card is visible, this hides the back */
+  transform: rotateY(-180deg); /* This rotates the back 180 degrees */
 }
 
-.card.visible .card-front {
-  transform: rotateY(0); 
+.card.visible .card-front { /* When the card is visible, this shows the front */
+  transform: rotateY(0); /* This keeps the front facing forward */
 }
 
-.card.matched .face {
-  animation: dance 1s linear infinite 500ms;
+.card.matched .face { /* When the card is matched, this animates the face */
+  animation: dance 1s linear infinite 500ms; /* This makes the card dance */
 }
 
-.card-back {
-  background-color: gold;
-  border-color: black;
-  transform: rotateY(0); 
+.card-back { /* This styles the back of the card */
+  background-color: gold; /* This makes the back gold */
+  border-color: black; /* This makes the border black */
+  transform: rotateY(0); /* This keeps the back facing forward by default */
 }
 
-.face {
-  position: relative;
-  transition: transform 100ms ease-in-out;
-  transform: scale(.9);
+.face { /* This styles the image on the card */
+  position: relative; /* This lets it be positioned inside the card */
+  transition: transform 100ms ease-in-out; /* This animates scaling */
+  transform: scale(.9); /* This makes the image a little smaller */
 }
 
-.overlay-text {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  display: none;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: gold;
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  transition: background-color 500ms, font-size 500ms;
-  font-size: 100px;
+.overlay-text { /* This styles the overlay messages */
+  top: 0; /* This puts it at the top of the screen */
+  left: 0; /* This puts it at the left of the screen */
+  right: 0; /* This puts it at the right of the screen */
+  bottom: 0; /* This puts it at the bottom of the screen */
+  z-index: 100; /* This puts it above most things */
+  display: none; /* This hides it by default */
+  position: fixed; /* This keeps it in the same place on the screen */
+  justify-content: center; /* This centers the content horizontally */
+  align-items: center; /* This centers the content vertically */
+  flex-direction: column; /* This stacks the content vertically */
+  color: gold; /* This makes the text gold */
+  font-family: Georgia, Times, 'Times New Roman', serif; /* This sets the font */
+  transition: background-color 500ms, font-size 500ms; /* This animates background and font size changes */
+  font-size: 100px; /* This makes the text very large */
 }
 
-.small {
-  font-size: .3em;
+.small { /* This styles smaller text in overlays */
+  font-size: .3em; /* This makes the text smaller */
 }
 
-.overlay-text.visible {
-  display: flex;
-  flex-direction: column;
-  
+.overlay-text.visible { /* When the overlay is visible */
+  display: flex; /* This shows the overlay and uses flexbox */
+  flex-direction: column; /* This stacks the content vertically */
 }
 
-
-.menu {
-  width: 35px;
-  height: 30px;
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  cursor: grabbing;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  z-index: 99;
+.menu { /* This styles the hamburger menu icon */
+  width: 35px; /* This sets the width */
+  height: 30px; /* This sets the height */
+  position: fixed; /* This keeps it in the same place on the screen */
+  top: 50px; /* This puts it 50px from the top */
+  right: 50px; /* This puts it 50px from the right */
+  cursor: grabbing; /* This changes the mouse pointer to a grabbing hand */
+  display: flex; /* This uses flexbox for layout */
+  flex-direction: column; /* This stacks the lines vertically */
+  justify-content: space-around; /* This spaces the lines evenly */
+  z-index: 99; /* This puts it above most things */
 }
 
-
-.navbar {
-  width: 300px;
-  height: 100%;
- 
-  top: 0;
-  right: -300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20% 0 0 60%;
-  transition: right .8s cubic-bezier(1, 0, 0, 1);
-  opacity: 80%;
-  z-index: 100;
+.navbar { /* This styles the navigation bar */
+  width: 300px; /* This sets the width */
+  height: 100%; /* This makes it as tall as the screen */
+  top: 0; /* This puts it at the top */
+  right: -300px; /* This hides it off the right side by default */
+  display: flex; /* This uses flexbox for layout */
+  justify-content: center; /* This centers the content horizontally */
+  align-items: center; /* This centers the content vertically */
+  border-radius: 20% 0 0 60%; /* This rounds the left side */
+  transition: right .8s cubic-bezier(1, 0, 0, 1); /* This animates sliding in */
+  opacity: 80%; /* This makes it a little see-through (should be 0.8 for best practice) */
+  z-index: 100; /* This puts it above most things */
 }
 
-.change {
-  right: 0;
+.change { /* This class is added when the menu is open */
+  right: 0; /* This slides the navbar into view */
 }
 
-.nav-list {
- display: flex;
- justify-content: flex-end;
- display: center; 
+.nav-list { /* This styles the list of navigation links */
+ display: flex; /* This uses flexbox for layout */
+ justify-content: flex-end; /* This puts the links at the end (right side) */
+ display: center; /* This is not a valid value and does nothing */
 }
 
-.nav-item {
-  list-style: disc;
-  margin: 30px;
+.nav-item { /* This styles each navigation item */
+  list-style: disc; /* This uses a bullet point for each item */
+  margin: 30px; /* This puts space around each item */
 }
 
-.nav-link {
-  text-decoration: none;
-  font-size: 18px;
-  color: gold;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-  padding: 3px 0;
+.nav-link { /* This styles each navigation link */
+  text-decoration: none; /* This removes the underline */
+  font-size: 18px; /* This sets the font size */
+  color: gold; /* This makes the text gold */
+  font-weight: 300; /* This makes the text a little lighter */
+  letter-spacing: 1px; /* This puts space between the letters */
+  text-transform: uppercase; /* This makes all letters uppercase */
+  position: relative; /* This lets you position things inside the link */
+  padding: 3px 0; /* This puts space above and below the text */
 }
 
-
-.change .line1 {
+.change .line1 { /* When the menu is open, this rotates the top line */
   transform: rotateZ(-405deg) translate(-8px, 6px);
 }
 
-.change .line3 {
+.change .line3 { /* When the menu is open, this rotates the bottom line */
   transform: rotateZ(405deg) translate(-8px, -6px);
 }
 
-.change .line2 {
+.change .line2 { /* When the menu is open, this hides the middle line */
   opacity: 0;
 }
 
-.nba {
-height: 175px;
-width: 150px;
+.nba { /* This styles the image on the back of the card */
+  height: 175px; /* This sets the image height */
+  width: 150px; /* This sets the image width */
 }
 
-.card-front:hover .nba {
+.card-front:hover .nba { /* When you hover over the front of the card, this moves the image */
   transform: translateY(0);
 }
 
-.card:hover {
+.card:hover { /* When you hover over a card, this changes the mouse pointer */
   cursor: grabbing;
 }
 
-.face {
-  transition: transform 100ms ease-in-out;
-  transform: scale(.9);   
-  height: 175px;
-  width: 150px;
+.face { /* This styles the image on the front of the card */
+  transition: transform 100ms ease-in-out; /* This animates scaling */
+  transform: scale(.9);   /* This makes the image a little smaller */
+  height: 175px; /* This sets the image height */
+  width: 150px; /* This sets the image width */
 }
 
-
-
-.card-front {
-  background-color: blue;
-  border-color: #333;
-  transform: rotateY(180deg); 
+.card-front { /* This styles the front of the card */
+  background-color: blue; /* This makes the front blue */
+  border-color: #333; /* This makes the border dark gray */
+  transform: rotateY(180deg); /* This rotates the front 180 degrees by default */
 }
 
-
-@media (max-width: 600px){
-  .game  {
-    grid-template-columns: repeat(2, auto)
+@media (max-width: 600px){ /* This makes the game responsive for small screens */
+  .game  { /* This changes the game grid */
+    grid-template-columns: repeat(2, auto) /* This makes 2 columns instead of 4 */
   }
 
-  .game-info-container {
-    flex-direction: column;
-    align-items: center;
+  .game-info-container { /* This changes the game info layout */
+    flex-direction: column; /* This stacks the info vertically */
+    align-items: center; /* This centers the info horizontally */
   }
 
-  .nav-list {
-    display: block;
+  .nav-list { /* This changes the navigation list */
+    display: block; /* This stacks the links vertically */
   }
-
 }

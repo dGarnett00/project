@@ -1,195 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="styles.css" rel="stylesheet">
-    <script src="script.js" async></script>
-    <title>Davonta Pick and Match </title>
+<!DOCTYPE html> <!-- This tells the browser that this is an HTML5 document -->
+<html lang="en"> <!-- This starts the HTML document and says the language is English -->
+  <head> <!-- This is the head section of the page -->
+    <meta charset="UTF-8"> <!-- This sets the character encoding to UTF-8, which supports most characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This makes the page responsive to screen size -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- This helps with compatibility for Internet Explorer browsers -->
+    <link href="styles.css" rel="stylesheet"> <!-- This links to the CSS file that styles the page -->
+    <script src="script.js" async></script> <!-- This loads the JavaScript file that controls the game, and loads it asynchronously -->
+    <title>Davonta Pick and Match</title> <!-- This sets the title of the page that shows in the browser tab -->
   </head>
-  <body>
-    <div class="overlay-text visible">
-      Click anywhere to Start
+  <body> <!-- This is the main content area of the page -->
+    <div class="overlay-text visible"> <!-- This is a message that appears over the game, telling the user to start -->
+      Click anywhere to Start <!-- This is the text shown to the user -->
     </div>
-    <div id="game-over" class="overlay-text">
-      Game Over
-        
-        <span class="small">
-          Click anywhere to Restart
-        </span>
-      </div>
-      <div id="winner" class="overlay-text">
-        WINNER 
-        <span class="small">
-          Click anywhere to Restart
-        </span>
-      </div>
+    <div id="game-over" class="overlay-text"> <!-- This is a message that appears when the game is over -->
+      Game Over <!-- This is the main text for game over -->
+      <span class="small"> <!-- This is a smaller text below the main message -->
+        Click anywhere to Restart <!-- This tells the user how to restart the game -->
+      </span>
+    </div>
+    <div id="winner" class="overlay-text"> <!-- This is a message that appears when the user wins -->
+      WINNER <!-- This is the main text for winning -->
+      <span class="small"> <!-- This is a smaller text below the main message -->
+        Click anywhere to Restart <!-- This tells the user how to restart the game -->
+      </span>
     </div>
 
-    <div class="video">
-      <video src="./videos/mari0.mp4" autoplay="true"
-        loop="true" muted></video>
-      </div>
-    <div class="container">
-      <nav class="navbar">
-        
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="./main.html" class="nav-link">Home</a>
+    <div class="video"> <!-- This is a container for the background video -->
+      <video src="./videos/mari0.mp4" autoplay loop muted></video> <!-- This is the video file that plays in the background, it starts automatically, repeats, and has no sound -->
+    </div>
+    <div class="container"> <!-- This is a container for the main game content -->
+      <nav class="navbar"> <!-- This is the navigation bar at the top of the page -->
+        <ul class="nav-list"> <!-- This is a list of navigation links -->
+          <li class="nav-item"> <!-- This is a single navigation item -->
+            <a href="./main.html" class="nav-link">Home</a> <!-- This link takes you to the home page -->
           </li>
-          <li class="nav-item">
-            <a href="./htp.html" class="nav-link">How to play</a>
+          <li class="nav-item"> <!-- This is another navigation item -->
+            <a href="./htp.html" class="nav-link">How to play</a> <!-- This link takes you to the instructions page -->
           </li>
-          <li class="nav-item">
-            <a href="./game.html" class="nav-link">Game</a>
+          <li class="nav-item"> <!-- This is another navigation item -->
+            <a href="./game.html" class="nav-link">Game</a> <!-- This link takes you to the game page -->
           </li>
-
         </ul>
       </nav>
-      <h1 class="title">Davonta Pick and Match</h1>
+      <h1 class="title">Davonta Pick and Match</h1> <!-- This is the main title of the game, shown on the page -->
 
-    <div class="game">
-      <div class="game-info-container">
-        <div class="game-info">
-          Time:<span id="time-remaining">50</span>
+      <div class="game"> <!-- This is the main game area -->
+        <div class="game-info-container"> <!-- This holds the game information like time and flips -->
+          <div class="game-info"> <!-- This is a single piece of game info -->
+            Time:<span id="time-remaining">50</span> <!-- This shows the time left in the game, starting at 50 seconds -->
+          </div>
+          <div class="game-info"> <!-- This is another piece of game info -->
+            Flips:<span id="flips">0</span> <!-- This shows how many card flips the player has made, starting at 0 -->
+          </div>
         </div>
-        <div class="game-info">
-          Flips:<span id="flips">0</span>
+        <!-- Each card below is a card in the memory game. There are 16 cards total, each with a front and back. -->
+        <div class="card"> <!-- This is a single card in the game -->
+          <div class="card-back card-face"> <!-- This is the back of the card, what you see before flipping -->
+            <img class="nba" src="./game/images/kobe.png"> <!-- This is the image on the back of the card -->
+          </div>
+          <div class="card-front card-face"> <!-- This is the front of the card, what you see after flipping -->
+            <img class="face" src="./game/images/bull.jpeg"> <!-- This is the image on the front of the card -->
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-          
+        <!-- The next 15 cards follow the same structure: card-back is always kobe.png, card-front is a different image for each card. -->
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/lak.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/bull.jpeg">
-
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/mav.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/nba.png">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/lak.jpeg">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/net.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/okc.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-        <img class="face" src="./game/images/mav.jpeg">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/rap.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/wae.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/nba.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/lak.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/rap.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/net.jpeg">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/wae.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/okc.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/okc.jpeg">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/net.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/nba.png">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/rap.jpeg">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/mav.jpeg">
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-        <img class="nba" src="./game/images/kobe.png">
+        <div class="card">
+          <div class="card-back card-face">
+            <img class="nba" src="./game/images/kobe.png">
+          </div>
+          <div class="card-front card-face">
+            <img class="face" src="./game/images/bull.jpeg">
+          </div>
         </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/wae.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/lak.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-        <img class="face" src="./game/images/rap.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-        <img class="face" src="./game/images/wae.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/okc.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/net.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/nba.png">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-        <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-          <img class="face" src="./game/images/mav.jpeg">
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-back card-face">
-          <img class="nba" src="./game/images/kobe.png">
-        </div>
-        <div class="card-front card-face">
-        <img class="face" src="./game/images/bull.jpeg">
-        </div>
-      </div>
-    </div>
-
+      </div> <!-- End of game area -->
+    </div> <!-- End of container -->
   </body>
 </html>
 

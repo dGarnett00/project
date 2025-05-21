@@ -1,45 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="main.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <header class="v-header container">
-            <div class="overlay">
-                <h1>WELCOME!</h1>
-            </div>
-            <div class="video">
-            <video src="./videos/space.mp4" autoplay="true"
-            loop="true"></video>
-            </div> 
-        </header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-                </div>
-
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="./main.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./htp.html" class="nav-link">How to play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./game.html" class="nav-link">Game</a>
-                    </li>
-                    
-                </ul>
-            </nav>
+<!DOCTYPE html> <!-- This tells the browser that this is an HTML5 document -->
+<html lang="en"> <!-- This starts the HTML document and says the language is English -->
+<head> <!-- This is the head section of the page -->
+    <meta charset="UTF-8"> <!-- This sets the character encoding to UTF-8, which supports most characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This makes the page responsive to screen size -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- This helps with compatibility for Internet Explorer browsers -->
+    <title>Welcome | Space Game</title> <!-- This sets the title of the page that shows in the browser tab -->
+    <link href="main.css" rel="stylesheet"> <!-- This links to the CSS file that styles the page -->
+</head>
+<body> <!-- This is the main content area of the page -->
+    <header class="v-header container"> <!-- This is the header section with classes for styling -->
+        <div class="video"> <!-- This is a container for the background video -->
+            <video src="./videos/space.mp4" autoplay loop muted playsinline></video> <!-- This is the video file that plays in the background, it starts automatically, repeats, has no sound, and plays inline on mobile -->
         </div>
-            
-             <script src="main.js"></script>
-    </body>
+        <div class="overlay"> <!-- This is an overlay that sits on top of the video -->
+            <h1>WELCOME!</h1> <!-- This is the main heading text shown on the page -->
+        </div>
+    </header>
+    <nav class="navbar container"> <!-- This is the navigation bar with classes for styling -->
+        <div class="menu" aria-label="Toggle navigation"> <!-- This is the hamburger menu icon for mobile view -->
+            <div class="line1"></div> <!-- These divs represent the lines of the hamburger icon -->
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list"> <!-- This is the unordered list that contains the navigation links -->
+            <li class="nav-item"> <!-- This is a list item for each navigation link -->
+                <a href="./main.html" class="nav-link">Home</a> <!-- This is the link to the home page -->
+            </li>
+            <li class="nav-item">
+                <a href="./htp.html" class="nav-link">How to play</a> <!-- This is the link to the how to play page -->
+            </li>
+            <li class="nav-item">
+                <a href="./game.html" class="nav-link">Game</a> <!-- This is the link to the game page -->
+            </li>
+        </ul>
+    </nav>
+    <script src="main.js"></script> <!-- This links to the JavaScript file for the page -->
+</body>
 </html>

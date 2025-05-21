@@ -1,63 +1,45 @@
-<!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link href="main.css" rel="stylesheet">
-    </head>
-    <body class="body2">
-        <header class="v-header container">
-            <div class="overlay">
-                <div class="rules">
-                    <h1>HOW TO PLAY</h1>
-                        <p> 1. you have 50 seconds to match as many cards as you can <br>
-                            2. With a flip tracker to track your moves <br>
-                        </p>
-                </div>
+<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Starts the HTML document and sets language to English -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with IE browsers -->
+    <title>How to Play | Space Game</title> <!-- Sets the page title -->
+    <link href="main.css" rel="stylesheet"> <!-- Links to the external CSS file -->
+</head>
+<body class="body2"> <!-- Body tag with a custom class for styling -->
+    <header class="v-header container"> <!-- Header section with classes for styling -->
+        <div class="video"> <!-- Video background container -->
+            <video src="./videos/space.mp4" autoplay loop muted playsinline></video> <!-- Background video, loops and is muted for autoplay -->
+        </div>
+        <div class="overlay"> <!-- Overlay div for dark background and centering content -->
+            <div class="rules"> <!-- Rules section for game instructions -->
+                <h1>HOW TO PLAY</h1> <!-- Main heading for the page -->
+                <ol> <!-- Ordered list for better semantics -->
+                    <li>You have 50 seconds to match as many cards as you can.</li> <!-- First rule -->
+                    <li>Use the flip tracker to track your moves.</li> <!-- Second rule -->
+                </ol>
             </div>
-            <div class="video">
-            <video src="./videos/space.mp4" autoplay="true"
-            loop="true"></video>
+        </div>
+        <nav class="navbar"> <!-- Navigation bar -->
+            <div class="menu" aria-label="Toggle navigation"> <!-- Hamburger menu for mobile navigation -->
+                <div class="line1"></div> <!-- First line of hamburger -->
+                <div class="line2"></div> <!-- Second line of hamburger -->
+                <div class="line3"></div> <!-- Third line of hamburger -->
             </div>
-            <div class="container">
-                <nav class="navbar">
-                    <div class="menu">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                    </div>
-
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="./main.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./htp.html" class="nav-link">How to play</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./game.html" class="nav-link">Game</a>
-                        </li>
-                         
-                        
-                    </ul>
-                </nav>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <script src="main.js"></script>
-    </body>
+            <ul class="nav-list"> <!-- List of navigation links -->
+                <li class="nav-item"> <!-- Navigation item -->
+                    <a href="./main.html" class="nav-link">Home</a> <!-- Link to Home page -->
+                </li>
+                <li class="nav-item"> <!-- Navigation item -->
+                    <a href="./htp.html" class="nav-link">How to play</a> <!-- Link to How to Play page -->
+                </li>
+                <li class="nav-item"> <!-- Navigation item -->
+                    <a href="./game.html" class="nav-link">Game</a> <!-- Link to Game page -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script src="main.js"></script> <!-- Links to the main JavaScript file -->
+</body>
 </html>
